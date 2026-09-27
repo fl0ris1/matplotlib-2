@@ -25,12 +25,19 @@ import numpy as np
 import random
 
 bins=[0,30,50,70,90,100]
+plus75=0
 student_score=[]
 for i in range(50):
-    student_score.append(random.randint(0,100))
-    
+    score=random.randint(0,100)
+    student_score.append(score)
+    if score>75:
+        plus75+=1
+
+print(plus75)
+
 plt.hist(student_score,bins,edgecolor='white',color='blue')
 plt.title("Marks of 50 Students")
 plt.xlabel("Bins")
 plt.ylabel("Marks")
 plt.show()
+
